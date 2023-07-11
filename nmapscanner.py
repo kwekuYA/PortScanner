@@ -19,13 +19,11 @@ scan_ = nmap.PortScanner()
 print("\n Scanning " + target + " for ports "+str(ports)+". \n" )
 
 for port in ports:
-    portscan = scan_(target,str(port))
+    portscan = scan_.scan(target,str(port))
     # The result from the above code contains various information
     # Hence we need to select which information we want to see
-    # Information selected include state of the port, status and name of service.
+    # Information selected include state and status of the port 
     #portscan = portscan['scan'][target]['tcp'][port]['state']['name']['status']
-    
-    print("Port "+ port +" is "+ portscan['scan'][target]['tcp'][port]['state'] + "\n" )
-    print("The service running on "+ port+ " is "+ portscan['scan'][target]['name'])
+    print("Port "+ str(port) +" is "+ portscan['scan'][target]['tcp'][port]['state'] + "\n" )
 
 print("\n Host "+ target +" is " + portscan['scan'][target]['status']['state'])
