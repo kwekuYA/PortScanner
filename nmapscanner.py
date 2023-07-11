@@ -23,7 +23,7 @@ for port in ports:
     # The result from the above code contains various information
     # Hence we need to select which information we want to see
     # Information selected include state and status of the port 
-    #portscan = portscan['scan'][target]['tcp'][port]['state']['name']['status']
+    #portscan = portscan['scan'][target]['tcp'][port]['state']['status']
     print("Port "+ str(port) +" is "+ portscan['scan'][target]['tcp'][port]['state'] + "\n" )
 
 print("\n Host "+ target +" is " + portscan['scan'][target]['status']['state'])
